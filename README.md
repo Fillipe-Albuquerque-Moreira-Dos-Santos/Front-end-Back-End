@@ -45,3 +45,33 @@ CREATE TABLE Logradouro (
     logradouro VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
+
+### 1. Instalar Java 8
+Baixe e instale o Java 8 (JDK 1.8):
+
+🔗 https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+
+---
+
+### 2. Instalar Maven
+Maven é necessário para compilar o backend:
+
+🔗 https://maven.apache.org/install.html
+
+---
+
+### 3. Instalar Docker
+Docker será usado para executar o SQL Server 2022:
+
+🔗 https://docs.docker.com/get-docker/
+
+---
+
+### 4. Subir SQL Server 2022 com Docker
+
+Execute o comando abaixo no terminal:
+
+```bash
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Your_password123" \
+   -p 1433:1433 --name sql_server_2022 \
+   -d mcr.microsoft.com/mssql/server:2022-latest
